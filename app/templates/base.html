@@ -8,6 +8,68 @@
         <title>Microblog</title>
     {% endif %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .car-container {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .car-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .car-details {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .car-details p {
+    margin: 8px 0;
+  }
+
+  .car-details strong {
+    font-size: 18px;
+  }
+
+  .car-container.active {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const carContainers = document.querySelectorAll(".car-container");
+
+    carContainers.forEach(container => {
+      container.addEventListener("mouseenter", () => {
+        container.classList.add("active");
+      });
+
+      container.addEventListener("mouseleave", () => {
+        container.classList.remove("active");
+      });
+    });
+  });
+</script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">

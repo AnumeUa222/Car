@@ -8,8 +8,12 @@
     {% endif %}
     <h1>{{current_user.username}}</h1>
     {% for post in posts %}
-        <img src={{post.img_path}} alt="oops, we lost this img" width="400" height="400">
-        <p>{{post.name}} - {{post.text}}</p>
-        <h3>{{post.body}}</h3>
+    <div class="car-container">
+      <img class="car-image" src={{post.img_path}} alt="oops, we lost this img">
+      <div class="car-details">
+        <p><strong>{{post.name}}</strong>
+        <p>{{post.text}}</p>
+      </div>
+    </div>
     {% endfor %}
 {% endblock %}

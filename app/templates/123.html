@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Main page - Microblog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .car-container {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .car-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .car-details {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .car-details p {
+    margin: 8px 0;
+  }
+
+  .car-details strong {
+    font-size: 18px;
+  }
+
+  .car-container.active {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const carContainers = document.querySelectorAll(".car-container");
+
+    carContainers.forEach(container => {
+      container.addEventListener("mouseenter", () => {
+        container.classList.add("active");
+      });
+
+      container.addEventListener("mouseleave", () => {
+        container.classList.remove("active");
+      });
+    });
+  });
+</script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<a class="navbar-brand" href="/">Microblog</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Головна</a>
+
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/login">Вхід</a>
+
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/sign-up">Реєстрація</a>
+
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/edit-profile">Кабінет</a>
+
+</li>
+</ul>
+</div>
+</nav>
+<div class="container">
+<h1>Main page</h1>
+
+<div class="car-container">
+  <img class="car-image" src="https://www.auto-data.net/images/f73/Nissan-Skyline-GT-R-X-R34_1.jpg" alt="Nissan Skyline">
+  <div class="car-details">
+    <p><strong>Car 1</strong> - 2.6 TT (280 hp) 2568 cc, 209 Nm @ 6800 rpm</p>
+    <p>6 cylinders (L6), inline arrangement</p>
+    <p>397 Nm @ 4400 rpm</p>
+    <p>Electronic fuel injection, Petrol</p>
+  </div>
+</div>
+
+<div class="car-container">
+  <img class="car-image" src="https://nedmotorsport.com/images/stories/bmw%20e46%20m3%20gtr%201.jpg" alt="BMW E46">
+  <div class="car-details">
+    <p><strong>Car 2</strong> - V8 4.0-liter (ECU 12A)</p>
+    <p>Max power @ 7500 rpm: 493 hp</p>
+    <p>Max torque: [missing value]</p>
+  </div>
+</div>
+
+
+<!-- Repeat the above structure for other cars -->
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
