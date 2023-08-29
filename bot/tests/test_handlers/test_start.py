@@ -1,6 +1,6 @@
 from unittest.mock import AsyncMock
 import pytest
-from bot.handlers.users import start, login_register_keyboard
+from bot.handlers import start, login_register_keyboard
 
 
 @pytest.mark.asyncio
